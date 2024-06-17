@@ -183,11 +183,11 @@
                 Descubra como a inteligência artificial pode potencializar sua experiência na criação de cartões Anki.
               </p>
               <ul>
-                <li><i class="ri-check-double-line"></i>Utilizamos o modelo GPT4 da OpenAI para potencializar os resultados desejados.</li>
+                <li><i class="ri-check-double-line"></i>Utilizamos o modelo Llama3 da Groq para potencializar os resultados desejados.</li>
                 <li><i class="ri-check-double-line"></i>Apenas cole textos para que a IA crie seus cartões Anki, economizando seu tempo e aumentando a eficácia do seu estudo.</li>
               </ul>
               <p>
-                Saiba mais <a href="https://openai.com/index/chatgpt/" target="_blank">aqui</a>...
+                Saiba mais <a href="https://wow.groq.com/why-groq/" target="_blank">aqui</a>...
               </p>
             </div>
           </div>

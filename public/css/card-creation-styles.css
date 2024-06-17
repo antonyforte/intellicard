@@ -1,0 +1,297 @@
+/* Card-creation Page */
+
+body {  
+    background-color: #1b1b1c;
+    color: #fff;
+    height: 100%;
+    border: 2px solid #ac0032;
+
+
+}
+
+
+.primary-container {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+    gap: 200px;
+    padding: 5% 5% 5% 0% ;
+}
+
+.ending-container {
+  margin: 5%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 20%;
+}
+
+
+.container {
+    width: 100%;
+}
+
+.custom-table {
+    background-color: black;
+    color: white;
+    width: 100% ;
+    border: 2px solid #ac0032;
+  }
+  
+  .custom-table th {
+    background-color: #333;
+    color: #fff; /* Darker background for table headers */
+  }
+
+  .custom-table td {
+    background-color: #1b1b1c;
+    color: #ac0032;
+    padding: 2%;
+  }
+
+  .flip-card, .flip-card-click {
+    display: inline-block;
+      background-color: transparent;
+      width: 200px;
+      height: 200px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ac0032;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner,
+    .flip-card-click:focus .flip-card-inner,
+    .flip-card-click:active .flip-card-inner,
+    .flip-card-click.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-inner:focus {
+      outline: 5px solid #03c23c;
+      cursor: pointer;
+    }
+    .flip-card-inner:hover {
+      outline: 5px solid #ac0032;
+      cursor: pointer;
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+    }
+    .flip-card-front h2 {
+        color: white;
+        font-size: 16pt;
+        font-family: "Roboto";
+        font-weight: 400;
+        padding: 10px;
+      }
+    .flip-card-front p, .flip-card-back p {
+      padding: 10px;
+      font-size: 16pt;
+      color: white;
+    }
+    .flip-card-front {
+      background-color: #0d96096e;
+    }
+    .flip-card-back {
+      background-color: #008183;
+      transform: rotateY(180deg);
+    }
+
+  select {
+    /* Reset Select */
+    appearance: none;
+    outline: 10px red;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    border: 1px solid #ac0032;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    padding-top: 1em;
+    background-color: #414141;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #ff0048;
+  }
+
+  .crud-buttons {
+    display: flex;
+    gap: 8%;
+    padding-right: 10px;
+  }
+  
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #222; /* Slightly lighter background for striped rows */
+  }
+  
+  .custom-table tbody tr:hover {
+    background-color: #444; /* Background color for hover effect */
+  }
+
+.card-creation-main {
+    display: grid;
+    width: 100%;
+}
+
+.card-creation-title {
+    border-bottom: 2px solid #ac0032;
+}
+
+
+.card-creation-title h3 {
+    font-family: "Ikaros";
+    font-weight: 400;
+    color: #ffff;
+    margin: 2% 0% 1% 1%;
+}
+
+
+.text-area-containers {
+    display: inline-flex;
+    width: 100%;
+}
+
+.form-container {
+    display: inline-grid;
+    height: 100%;
+    width: 45%;
+    margin-top: 3%;
+    margin-left: 1%;
+}
+
+.card-creation-container {
+    display: flex;
+    width: 100%;
+    height: 100%;    
+}
+
+.btn.btn-primary {
+    background-color: #ac0032;
+    border: 1px solid #ffffff;
+    color: #ffffff9a;
+    width: 20%;
+    padding: 2px 2px 2px 2px;
+    height: 80%;
+    margin-left: 33%;
+}
+
+.btn.btn-primary:hover {
+    background-color: #ff0048;
+    color: #ffffff;
+}
+
+.btn.btn-primary.update {
+    background-color: #250FBB; 
+    width: 30%; 
+    height: 70%;
+}
+
+.btn.btn-primary.send {
+    background-color: #11a31e; 
+    width: 30%; 
+    height: 70%; 
+    margin-top: 1%
+}
+
+.btn.btn-primary.update:hover {
+    background-color: #1e0c92b6; 
+}
+
+.btn.btn-primary.send:hover {
+    background-color: #0d7516b7; 
+
+}
+
+.btn.btn-primary.send-update:hover {
+    background-color: #1b1b1b;
+}
+
+.ia-response-container {
+    display: grid;
+    width: 45%;
+    height: 100%;
+    margin-top: 3%;
+}
+
+.ia-buttons {
+    display: flex;
+    align-items: start;
+    justify-items: start;
+    align-content: center;
+    justify-content: center;
+    padding-right: 19%;
+}
+
+.form-control,
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+    display: flex;
+    height: 400px;
+    border: 2px solid #ac0032;
+    font-family: "Roboto";
+    background-color: #1b1b1b;
+    color: #fff;
+    
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffff;
+    opacity: 0.4; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ac0032;
+    opacity: 5;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(172, 0, 50);
+    opacity: 5;
+}

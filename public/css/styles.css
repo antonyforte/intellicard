@@ -1,0 +1,358 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000db;
+    height: 100%;
+    font-family: "Roboto";
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    display: flex;
+    height: 720px;
+    grid-row: initial;
+}
+
+.div-1 {
+    position: fixed;
+    background-color: #040721;
+    width: 15%;
+    height: 100%;
+    border: 1px solid rgba(57, 58, 57, 0.467);
+    border-top: 0;
+    padding-top: 2%;
+    border-radius: 0.5em;
+    display: inline-block;
+    color: #A004FF;
+}
+
+.div-2 {
+    margin-left: 15%;
+}
+
+.user-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.user-links img {
+    width:  60px;
+    height: 60px;
+}
+
+.user-links h1 {
+    margin: 0;
+    align-self: center;
+    font-family: "Poppins", "Roboto Condensed", serif;
+    font-weight: 300;
+    font-size: large;
+    padding: 5%;
+
+}
+
+.dashboard-links {
+    display: grid;
+    height: 100%;
+    max-height: 80%;
+    align-items: center;
+    justify-items: center;
+    justify-content: flex-start;
+    margin-left: 36px;
+}
+
+.dhome-link,
+.chome-link,
+.logout-link {
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout-link {
+    align-self: end;
+    margin-bottom: 60%;
+}
+
+.dhome-link img,
+.chome-link img,
+.logout-link img {
+    height: 30px;
+    width: 30px;
+}
+
+.dhome-link a,
+.dhome-link p,
+.chome-link a,
+.chome-link p,
+.logout-link-button {
+    height: 100%;
+    transition: color 0.3 ease;
+    cursor: pointer;
+    font-family: "Roboto Condensed";
+}
+
+.logout-link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: underline;
+}
+
+.dhome-link a:hover,
+.chome-link a:hover,
+.logout-link-button:hover {
+    color: azure; /* Define a cor que você deseja quando o mouse está sobre os links */
+}
+
+.div-2 {
+    background-color: #0B0B2B;
+    display: flexbox;
+    width: 85%;
+    height: 100%;
+    border: 1px solid rgb(105, 8, 73);
+}
+
+.apage-transition {
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
+
+/* Dashboard */
+
+.dashboard-container {
+    display: flow-root;
+}
+
+.dashboard-title {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    color: #efff;
+    justify-items: center;
+    font-family: "Ikaros Light";
+    font-size: x-large;
+}
+
+.dashboard-title h1 {
+    border-bottom: 2px solid #A004FF;
+}
+
+.dashboard-nav {
+    display: grid;
+    max-height: 58px;
+    padding: 2% 0 2% 0;
+}
+
+.breadcrumb {
+    width: 99.7%;
+    padding: 2%;
+    padding-left: 4%;
+    background-color: #040721;
+    border: 1px solid rgb(172, 0, 50);
+    transition: top 0.3s;
+}
+
+.breadcrumb.fixed {
+    position: fixed;
+    top: 0;
+    left: 20;
+    z-index: 1000;
+    width: 84%;
+}
+
+.breadcrumb-item::after {
+    content: "/";
+    color: rgb(172, 0, 50); 
+    margin: 0 0.5rem; 
+}
+
+.breadcrumb-item.active {
+    color: rgb(172, 0, 50);
+}
+
+.breadcrumb-item a {
+    color: #efff;
+    text-decoration: underline;
+}
+
+:root {
+    --bs-breadcrumb-divider: 
+}
+
+.dashboard-main {
+    display: block;
+    height: 100%;
+    padding: 5%;
+    margin-top: 3%;
+    background-color: #040721;
+    border: 1px solid rgb(172, 0, 50);
+}
+
+.accordion {
+    --bs-accordion-bg: #0B0B2B;
+}
+
+.accordion-button,
+.accordion-button:not(.collapsed),
+.accordion-body {
+    background-color: #0B0B2B;
+    color: #ac0032;
+    margin-top: 5%;
+    box-shadow: none;
+}
+
+.accordion-button:hover {
+    border: 2px solid #ac0032;
+}
+
+.accordion-button:after {
+    color: #ac0032;
+}
+
+/* Decks and Cards List */
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    margin-left: 20px;
+}
+
+.card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+}
+
+.card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+                -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+@media all and (max-width: 500px) {
+    .card-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
+    }
+}
+
+.flip-card, .flip-card-click {
+    display: inline-block;
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card-click:focus .flip-card-inner,
+.flip-card-click:active .flip-card-inner,
+.flip-card-click.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner:focus {
+    outline: 5px solid #03c23c;
+    cursor: pointer;
+}
+
+.flip-card-inner:hover {
+    outline: 5px solid #ac0032;
+    cursor: pointer;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-front h2 {
+    color: white;
+    font-size: 16pt;
+    font-family: "Roboto";
+    font-weight: 400;
+    padding: 10px;
+}
+
+.flip-card-front p, .flip-card-back p {
+    padding: 10px;
+    font-size: 16pt;
+    color: white;
+}
+
+.flip-card-front {
+    background-color: #A004FF;
+}
+
+.flip-card-back {
+    background-color: #ac0032;
+    transform: rotateY(180deg);
+}

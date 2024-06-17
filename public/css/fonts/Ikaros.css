@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Ikaros";
+    src: url('../../fonts/ikaros-sans/Ikaros-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Ikaros Light";
+    src: url('../../fonts/ikaros-sans/Ikaros-Light.otf') format('opentype');
+
+}

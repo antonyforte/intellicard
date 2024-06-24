@@ -96,6 +96,9 @@ body {
       backface-visibility: hidden;
     }
     .flip-card-front h2 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         color: white;
         font-size: 16pt;
         font-family: "Roboto";
@@ -103,6 +106,9 @@ body {
         padding: 10px;
       }
     .flip-card-front p, .flip-card-back p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       padding: 10px;
       font-size: 16pt;
       color: white;

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Api-Card')
+@section('title', 'IntelliCard')
 
 @php
     $decklink = true;
@@ -20,7 +20,7 @@
                     </button>
                 </div>
                   <div class="card_title title-white">
-                    <a href="/">{{ $deck->name }}</a>
+                    <p>{{ $deck->name }}</p>
                   </div>
                 </div>
             @endforeach

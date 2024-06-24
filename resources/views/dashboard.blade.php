@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Api-Card')
+@section('title', 'IntelliCard')
 
 @php
     $decklink = false;
@@ -34,7 +34,7 @@
                 <form class="form-container" action="{{ route('deck.create') }}" method="POST">
                     @csrf
                     <div class="modal-body">
-                        <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite o nome do Deck...">
+                        <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="25" placeholder="Digite o nome do Deck...">
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
@@ -56,7 +56,7 @@
                 <form class="form-container" action="{{ route('category.create') }}" method="POST">
                     @csrf
                     <div class="modal-body">
-                        <input type="text" name="class" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite o nome da Categoria...">
+                        <input type="text" name="class" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="45" placeholder="Digite o nome da Categoria...">
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
@@ -92,8 +92,11 @@
                                         <div class="card" onclick="updateBreadcrumb('{{ $category->class }}', '{{ $card->front }}')">
                                             <div class="card_image">
                                                 <button onclick="window.location.href='/dashboard/card/{{$card->id}}'" class="btn btn-primary" style="position: absolute;height: 35px; width: 40px ; z-index: 1000; border-radius: 10px; background-color: #040721">
-                                                    <img src="{{ asset('icons/edit.png') }}" alt="delete" style="height: 25px; width: 25px; padding-right: 8px;">
+                                                    <img src="{{ asset('icons/edit.png') }}" alt="delete" style="height: 25px; width: 25px; position: relative; left: -5px; bottom 5px">
                                                 </button>
+                                                <button class="btn btn-primary expand-btn" style="position: absolute;height: 35px; width: 40px ; z-index: 1000; border-radius: 10px; background-color: #040721; margin-left: 160px; margin-top: 165px">
+                                                    <img src="{{ asset('icons/expand.png') }}" alt="expand" style="height: 25px; width: 25px; position: relative; left: -5px; bottom: 2px">
+                                                </button>                                                
                                                 <div id="card-container2">
                                                     <div class="flip-card-click">
                                                       <div class="flip-card-inner" tab-index="0">
@@ -135,6 +138,9 @@
                                                 <button onclick="window.location.href='/dashboard/card/{{$card->id}}'" class="btn btn-primary" style="position: absolute;height: 35px; width: 40px ; z-index: 1000; border-radius: 10px; background-color: #040721">
                                                     <img src="{{ asset('icons/edit.png') }}" alt="delete" style="height: 25px; width: 25px; padding-right: 8px;">
                                                 </button>
+                                                <button class="btn btn-primary expand-btn" style="position: absolute;height: 35px; width: 40px ; z-index: 1000; border-radius: 10px; background-color: #040721; margin-left: 160px; margin-top: 165px">
+                                                    <img src="{{ asset('icons/expand.png') }}" alt="expand" style="height: 25px; width: 25px; position: relative; left: -5px; bottom: 2px">
+                                                </button> 
                                                 <div id="card-container2">
                                                     <div class="flip-card-click">
                                                       <div class="flip-card-inner" tab-index="0">
@@ -156,8 +162,42 @@
                     </div>
                 </div>
             </div>
+
+            <div id="cardModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="modalCardContainer">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("cardModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll(".expand-btn").forEach(function(button) {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                var cardContent = this.closest(".card").querySelector(".flip-card-click").innerHTML;
+                document.getElementById("modalCardContainer").innerHTML = '<div class="flip-card-click">' + cardContent + '</div>';
+                modal.style.display = "block";
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    });
+
+    </script>
     <script>
         document.addEventListener('scroll', function() {
             const breadcrumb = document.querySelector('.breadcrumb');
